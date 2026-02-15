@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSlide from '../components/slides/hero-slide/hero-slide.astro';
+import FeatureSlide from '../components/slides/feature-slide/feature-slide.astro';
+import WantedSlide from '../components/slides/wanted-slide/wanted-slide.astro';
+---
+
+<Layout>
+  <div class='swiper'>
+    <div class='swiper-wrapper'>
+      <HeroSlide />
+
+      <FeatureSlide
+        number='01'
+        title='DOMINATE'
+        subtitle='Street Combat'
+        highlights={['#1 Shooter', 'Crown Rankings', 'Gang Wars']}
+        alignment='left'>
+        <Fragment slot='description'>
+          The streets don’t care about talk. Only skill. Every gunfight earns <span class='keyword'>Crowns</span>. Every
+          win builds <span class='keyword'>Respect</span>. Sharp aim, smart movement, smart decisions that’s how you
+          become <span class='keyword'>#1 Shooter</span> in the city.
+        </Fragment>
+      </FeatureSlide>
+      <FeatureSlide
+        number='02'
+        title='OUTRUN'
+        subtitle='Street Racing'
+        highlights={['#1 Driver', 'Custom Builds', 'Underground Races']}
+        alignment='right'>
+        <Fragment slot='description'>
+          Speed is power. Control is everything. Win races, escape chases, dominate drift events to earn <span
+            class='keyword'>Driving Crowns</span
+          >. Tune your build. Perfect your lines. Become the <span class='keyword'>fastest name</span> on the leaderboard.
+        </Fragment>
+      </FeatureSlide>
+      <FeatureSlide
+        number='03'
+        title='REPRESENT'
+        subtitle='Street Identity'
+        highlights={['#1 Style', 'Rare Drops', 'Fashion Crowns']}
+        alignment='left'>
+        <Fragment slot='description'>
+          In UNSCARED, your look is your legacy. Rock rare pieces, exclusive drops, and signature fits to earn <span
+            class='keyword'>Style Crowns</span
+          >. Stand out. Get noticed. Build your name through pure <span class='keyword'>street presence</span>.
+        </Fragment>
+      </FeatureSlide>
+
+      <WantedSlide />
+    </div>
+
+    <div class='swiper-pagination'></div>
+  </div>
+</Layout>
+
+<script>
+  import '../shared/scripts/swiper-init.ts';
+</script>

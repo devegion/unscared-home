@@ -1,0 +1,34 @@
+---
+import './feature-slide.css';
+
+interface Props {
+  number: string;
+  title: string;
+  subtitle: string;
+  highlights: string[];
+  alignment: 'left' | 'right';
+}
+
+const { number, title, subtitle, highlights, alignment } = Astro.props;
+---
+
+<div class='swiper-slide feature-slide'>
+  <div class={`feature-content ${alignment}`}>
+    <div class='feature-text'>
+      <span class='feature-number'>{number}</span>
+      <div class='feature-header'>
+        <h2 class='feature-title'>{title}</h2>
+        <h3 class='feature-subtitle'>{subtitle}</h3>
+      </div>
+      <p class='feature-description'>
+        <slot name="description" />
+      </p>
+      <div class='feature-highlights'>
+        {highlights.map(highlight => <span class='highlight'>{highlight}</span>)}
+      </div>
+    </div>
+    <div class='feature-image'>
+      <div class='image-placeholder'></div>
+    </div>
+  </div>
+</div>

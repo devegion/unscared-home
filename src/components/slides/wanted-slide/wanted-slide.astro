@@ -1,0 +1,27 @@
+---
+import StarSvg from '../../../assets/star.svg';
+import './wanted-slide.css';
+---
+
+<div class='swiper-slide wanted-slide'>
+  <div class='wanted-container'>
+    <div class='wanted-header'>
+      <div class='wanted-stars'>
+        {[...Array(5)].map(() => <StarSvg />)}
+      </div>
+      <h2 class='wanted-title'>WANTED</h2>
+    </div>
+
+    <div class='wanted-content'>
+      <div class='wanted-message'>
+        <p class='wanted-text'>
+          You've seen what we offer. <span class='highlight-text'>The streets are waiting.</span>
+        </p>
+        <p class='wanted-subtext'>Join the most intense RageMP experience.</p>
+      </div>
+      <div class='wanted-cta'>
+        <a href='#' class='wanted-button primary'>Join Discord</a>
+      </div>
+    </div>
+  </div>
+</div>
