@@ -17,6 +17,10 @@
     text-align: center;
 
     @media (min-width: 768px) {
+      gap: 4rem;
+    }
+
+    @media (min-width: 1024px) {
       width: 80%;
       padding: 0;
       gap: 6rem;
@@ -33,6 +37,16 @@
 
         .feature-image {
           justify-content: flex-start;
+          margin-left: 0;
+          margin-right: -4rem;
+        }
+      }
+    }
+
+    @media (min-width: 1280px) {
+      &.right {
+        .feature-image {
+          margin-right: -6rem;
         }
       }
     }
@@ -40,6 +54,12 @@
     @media (min-width: 1400px) {
       width: 75%;
       gap: 8rem;
+
+      &.right {
+        .feature-image {
+          margin-right: -8rem;
+        }
+      }
     }
   }
 
@@ -48,7 +68,7 @@
     top: -60px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: 900;
     color: rgba(217, 119, 6, 0.25);
     line-height: 1;
@@ -58,7 +78,12 @@
     text-shadow: 0 0 15px rgba(217, 119, 6, 0.3);
 
     @media (min-width: 768px) {
-      font-size: 10rem;
+      font-size: 7rem;
+      top: -70px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 8rem;
       top: -80px;
       left: -20px;
       transform: none;
@@ -66,21 +91,21 @@
       text-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
     }
 
-    @media (min-width: 1024px) {
-      font-size: 14rem;
+    @media (min-width: 1280px) {
+      font-size: 11rem;
       top: -140px;
       left: -40px;
       color: rgba(217, 119, 6, 0.3);
     }
 
     @media (min-width: 1400px) {
-      font-size: 12rem;
-      top: -120px;
+      font-size: 10rem;
+      top: -100px;
       left: -40px;
     }
 
     @media (min-width: 1920px) {
-      font-size: 16rem;
+      font-size: 13rem;
       top: -160px;
       left: -55px;
     }
@@ -89,8 +114,13 @@
   .feature-text {
     width: 100%;
     position: relative;
+    z-index: 2;
 
     @media (min-width: 768px) {
+      max-width: 560px;
+    }
+
+    @media (min-width: 1024px) {
       flex: 1;
       max-width: 600px;
     }
@@ -100,10 +130,14 @@
     margin-bottom: 1rem;
 
     @media (min-width: 768px) {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     @media (min-width: 1024px) {
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 1280px) {
       margin-bottom: 2rem;
     }
   }
@@ -123,7 +157,7 @@
     opacity: 0;
 
     @media (min-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
 
     @media (min-width: 1024px) {
@@ -148,10 +182,14 @@
     opacity: 0;
 
     @media (min-width: 768px) {
-      font-size: 1rem;
+      font-size: 0.9375rem;
     }
 
     @media (min-width: 1024px) {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 1280px) {
       font-size: 1.25rem;
     }
 
@@ -175,12 +213,17 @@
 
     @media (min-width: 768px) {
       font-size: 0.875rem;
+      max-width: 480px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 0.875rem;
       line-height: 1.7;
       margin-bottom: 2rem;
       max-width: none;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
       font-size: 1rem;
       line-height: 1.8;
     }
@@ -196,7 +239,7 @@
     gap: 0.5rem;
     justify-content: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       justify-content: flex-start;
       gap: 0.75rem;
     }
@@ -220,11 +263,16 @@
 
     @media (min-width: 768px) {
       font-size: 0.75rem;
+      padding: 0.45rem 0.875rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 0.75rem;
       padding: 0.5rem 1rem;
       border-radius: 8px;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
       font-size: 0.8125rem;
       padding: 0.625rem 1.25rem;
     }
@@ -232,15 +280,65 @@
 
   .feature-image {
     width: 100%;
-    max-width: 280px;
+    max-width: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    opacity: 0;
+    overflow: visible;
 
     @media (min-width: 768px) {
-      flex: 1;
+      max-width: 460px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(217, 119, 6, 0.12) 0%, transparent 60%);
+      filter: blur(70px);
+      z-index: 0;
+      transform: scale(1.8);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 30px;
+      background: radial-gradient(ellipse, rgba(217, 119, 6, 0.15) 0%, transparent 70%);
+      filter: blur(20px);
+      z-index: 0;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 1;
+      filter: none;
+    }
+
+    img {
+      filter: drop-shadow(0 0 8px rgba(217, 119, 6, 0.25)) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7));
+    }
+
+    @media (min-width: 1024px) {
+      flex: 1.5;
       max-width: none;
       justify-content: flex-end;
+      margin-left: -4rem;
+      z-index: 1;
+    }
+
+    @media (min-width: 1280px) {
+      margin-left: -6rem;
+    }
+
+    @media (min-width: 1400px) {
+      margin-left: -8rem;
     }
   }
 
@@ -252,7 +350,6 @@
     border: 2px solid var(--color-primary);
     position: relative;
     overflow: hidden;
-    opacity: 0;
 
     &::before {
       content: '';
@@ -264,7 +361,7 @@
       height: 80%;
       border: 1px solid rgba(217, 119, 6, 0.3);
 
-      @media (min-width: 768px) {
+      @media (min-width: 1024px) {
         border-width: 2px;
       }
     }
@@ -281,10 +378,14 @@
       color: rgba(217, 119, 6, 0.3);
 
       @media (min-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
 
       @media (min-width: 1024px) {
+        font-size: 2rem;
+      }
+
+      @media (min-width: 1280px) {
         font-size: 3rem;
       }
     }
@@ -296,6 +397,10 @@
     }
 
     @media (min-width: 1024px) {
+      max-width: 400px;
+    }
+
+    @media (min-width: 1280px) {
       max-width: 500px;
     }
 
@@ -335,7 +440,7 @@
       }
     }
 
-    .image-placeholder {
+    .feature-image {
       animation: fadeScale 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
     }
   }

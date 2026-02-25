@@ -2,7 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import HeroSlide from '../components/slides/hero-slide/hero-slide.astro';
 import FeatureSlide from '../components/slides/feature-slide/feature-slide.astro';
+import StreetCombatSlide from '../components/slides/street-combat-slide/street-combat-slide.astro';
 import WantedSlide from '../components/slides/wanted-slide/wanted-slide.astro';
+
+import { Image } from 'astro:assets';
+
+import streetRacing from '../assets/street-racing.png';
 ---
 
 <Layout>
@@ -10,18 +15,7 @@ import WantedSlide from '../components/slides/wanted-slide/wanted-slide.astro';
     <div class='swiper-wrapper'>
       <HeroSlide />
 
-      <FeatureSlide
-        number='01'
-        title='DOMINATE'
-        subtitle='Street Combat'
-        highlights={['#1 Shooter', 'Crown Rankings', 'Gang Wars']}
-        alignment='left'>
-        <Fragment slot='description'>
-          The streets don’t care about talk. Only skill. Every gunfight earns <span class='keyword'>Crowns</span>. Every
-          win builds <span class='keyword'>Respect</span>. Sharp aim, smart movement, smart decisions that’s how you
-          become <span class='keyword'>#1 Shooter</span> in the city.
-        </Fragment>
-      </FeatureSlide>
+      <StreetCombatSlide />
       <FeatureSlide
         number='02'
         title='OUTRUN'
@@ -33,6 +27,9 @@ import WantedSlide from '../components/slides/wanted-slide/wanted-slide.astro';
             class='keyword'>Driving Crowns</span
           >. Tune your build. Perfect your lines. Become the <span class='keyword'>fastest name</span> on the leaderboard.
         </Fragment>
+        <div slot='image'>
+          <Image src={streetRacing} alt='' />
+        </div>
       </FeatureSlide>
       <FeatureSlide
         number='03'

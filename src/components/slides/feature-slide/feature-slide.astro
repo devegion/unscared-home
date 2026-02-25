@@ -21,14 +21,16 @@ const { number, title, subtitle, highlights, alignment } = Astro.props;
         <h3 class='feature-subtitle'>{subtitle}</h3>
       </div>
       <p class='feature-description'>
-        <slot name="description" />
+        <slot name='description' />
       </p>
       <div class='feature-highlights'>
         {highlights.map(highlight => <span class='highlight'>{highlight}</span>)}
       </div>
     </div>
     <div class='feature-image'>
-      <div class='image-placeholder'></div>
+      <slot name='image'>
+        <div class='image-placeholder'></div>
+      </slot>
     </div>
   </div>
 </div>

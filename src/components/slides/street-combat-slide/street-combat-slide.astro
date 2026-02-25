@@ -1,0 +1,35 @@
+---
+import './street-combat-slide.css';
+import { Image } from 'astro:assets';
+import streetCombatLeft from '../../../assets/street-combat-left.png';
+import streetCombatRight from '../../../assets/street-combat-right.png';
+---
+
+<div class='swiper-slide feature-slide-dual'>
+  <div class='dual-image-left'>
+    <Image src={streetCombatLeft} alt='' />
+  </div>
+
+  <div class='dual-image-right'>
+    <Image src={streetCombatRight} alt='' />
+  </div>
+
+  <div class='dual-content'>
+    <span class='feature-number'>01</span>
+    <div class='feature-header'>
+      <h3 class='feature-subtitle'>Street Combat</h3>
+      <h2 class='feature-title'>DOMINATE</h2>
+    </div>
+    <p class='feature-description'>
+      The streets don't care about talk. Only skill. Every gunfight earns <span class='keyword'>Crowns</span>. Every win
+      builds <span class='keyword'>Respect</span>. Sharp aim, smart movement, smart decisions — that's how you become <span
+        class='keyword'>#1 Shooter</span
+      > in the city.
+    </p>
+    <div class='feature-highlights'>
+      <span class='highlight'>#1 Shooter</span>
+      <span class='highlight'>Crown Rankings</span>
+      <span class='highlight'>Gang Wars</span>
+    </div>
+  </div>
+</div>
